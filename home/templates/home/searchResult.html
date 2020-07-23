@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List</h1>
+
+    <h3>have Flats</h3><br>
+    {% for city in citysHaveFlat  %}
+      {{city.location}} |
+      {{city.rent}} <br>
+    {% endfor %}
+    <hr>
+    <h3>need flats</h3><br>
+    {% for city in citysNeedFlat  %}
+      {{city.location_1}} |
+      {{city.rent}} <br>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'service/base.html'%}
+
+{% block content%}
+<div class="card rounded-lg shadow-lg p-lg-5 mb-5 bg-white" style="width: auto; margin: auto;">
+    <div class="card-body">
+      <h2 class="card-title"><b>Home Details</b></h2>
+      <p>{{logReq}}</p>
+      <form method="POST" action="{% url 'needFlatForm'%}">
+        {% csrf_token %}
+        <!-- first & last name -->
+        <div class="form-group">
+            <label for="inputLocation1">Location-1</label>
+            <input type="text" name="location1" class="form-control" id="inputLocation1" placeholder="Location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="inputLocation2">Location-2 </label>
+            <input type="text" name="location2" class="form-control" id="inputLocation2" placeholder="Another Location" required>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <label for="city">City *</label>
+                <input type="text" id="city" name="city" class="form-control" placeholder="Enter your city" required>
+            </div>
+            <div class="col">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" class="form-control" placeholder="state" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputRent">Approx Rent</label>
+          <input type="number" name="rent" class="form-control" id="inputRent" placeholder="Ammount" required>
+        </div>
+
+    <!-- 
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+            <label class="form-check-label" for="gridCheck">
+                Agree with all terms & condition
+            </label>
+          </div>
+        </div>
+    -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endblock%}
